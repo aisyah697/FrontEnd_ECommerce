@@ -27,7 +27,7 @@ class AllProducts extends Component {
           // placeholder="Search"
           {...this.props}
         />
-        <h1 className="text-center">All Products</h1>
+        <h1 className="text-center mt-3">All Products</h1>
         <hr className="divider" />
         <div className="container">
           <div className="row list-product-home">

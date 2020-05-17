@@ -7,11 +7,12 @@ import {
   changeInputUsername,
   changeInputPassword,
   doLogin,
+  doRegister,
 } from "../store/actions/actionUser";
 
 class Register extends Component {
-  postLogin = async () => {
-    await this.props.doLogin();
+  postRegister = async () => {
+    await this.props.doRegister();
     const is_login = this.props.dataUser.is_login;
     if (is_login) {
       this.props.history.replace("/login");
@@ -54,14 +55,13 @@ class Register extends Component {
                     </div>
                     <p>
                       Already have an account?
-                      <Link to="/login" />
-                      Sign in
+                      <Link to="/login"> Sign in</Link>
                     </p>
                     <hr className="my-4" />
                     <button
                       className="btn btn-lg btn-primary btn-block text-uppercase"
                       type="submit"
-                      onClick={() => this.postLogin()}
+                      onClick={() => this.postRegister()}
                     >
                       Continue
                     </button>
@@ -100,6 +100,7 @@ const mapDispatchToProps = {
   changeInputUsername,
   changeInputPassword,
   doLogin,
+  doRegister,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

@@ -3,7 +3,6 @@ const initialState = {
     password: "",
     email: "",
     address: "",
-    // avatar: "",
     is_login: false,
 };
 
@@ -29,16 +28,13 @@ export default function userReducer(userState = initialState, action) {
                 // address: action.payload.address,
                 is_login: true,
             };
-            // case 'LOGIN_FAILED':
-            //     return {
-            //         ...userState,
-            //         message: "Wrong username or password!",
-            //     };
         case "LOGOUT_SUCCESS":
             return {
                 ...userState,
                 is_login: false,
             };
+        case "REGISTER_SUCCESS":
+            return userState;
         default:
             return userState;
     }

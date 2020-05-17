@@ -12,7 +12,7 @@ const Navigation = (props) => {
   };
   console.log("cek header", props);
   return (
-    <div className="top-header mb-4">
+    <div className="top-header">
       <header>
         <p className="mini-header-txt ml-5">
           Need help? <i className="fab fa-whatsapp"></i> 081289879972
@@ -31,9 +31,12 @@ const Navigation = (props) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className="collapse navbar-collapse ml-3"
+          id="navbarSupportedContent"
+        >
           {/* <Search {...props} /> */}
-          <form className="form-inline my-2 my-lg-0">
+          <form className="form-inline my-2 my-lg-0 justify-content-center">
             <input
               className="form-control"
               type="search"
@@ -41,7 +44,7 @@ const Navigation = (props) => {
               aria-label="Search"
             />
           </form>
-          <div>
+          <div className="navbar-top-menu">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
@@ -81,6 +84,7 @@ const Navigation = (props) => {
           </div>
         </div>
       </nav>
+      <hr className="hr-navbar mb-0" />
     </div>
   );
 };

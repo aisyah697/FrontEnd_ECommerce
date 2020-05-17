@@ -22,6 +22,24 @@ export const doLogin = () => {
     };
 };
 
+export const doRegister = () => {
+    return (dispatch, getState) => {
+        const dataUsername = getState().user.inputUsername;
+        const dataPassword = getState().user.inputPassword;
+
+        const bodyRequest = {
+            username: dataUsername,
+            password: dataPassword
+        }
+
+        axios.post(base_url + "user", bodyRequest)
+            .then((response) => {
+                doLogin()
+                dispatch({ type: "REGISTER_SUCCESS", payload: response.data })
+            })
+    }
+}
+
 export const changeInputUsername = (e) => {
     return {
         type: "CHANGE_USERNAME_INPUT",
