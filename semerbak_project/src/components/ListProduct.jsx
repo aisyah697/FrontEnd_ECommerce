@@ -14,7 +14,7 @@ const ListProduct = (props) => {
           style={{ width: "15rem" }}
         >
           <img
-            src={"http://0.0.0.0:5000/img/" + props.image}
+            src={process.env.REACT_APP_BASE_URL + "img/" + props.image}
             className="card-img-top"
             alt={props.name}
           />

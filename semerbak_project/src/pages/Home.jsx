@@ -32,9 +32,17 @@ class Home extends Component {
             style={{ width: "100%" }}
             alt=""
           />
-          <div className="text-on-banner text-center">
-            <h1>THIS IS WELCOMING BANNER</h1>
-            <button className="btn-get-started">GET YOUR SEMERBAK</button>
+          <div className="banner-content">
+            <div className="text-on-banner text-center mt-2">
+              <h1>THE BEST QUALITY ESSENTIAL OILS</h1>
+              <hr className="hr-banner" />
+              <h2>We Bring Aromas to The Next Level</h2>
+            </div>
+            <div>
+              {/* <button className="btn-get-started text-center ">
+                GET YOUR SEMERBAK
+              </button> */}
+            </div>
           </div>
         </div>
         <h1 className="headline text-center">New Arrivals</h1>
@@ -75,6 +83,8 @@ class Home extends Component {
           </div>
         </div>
 
+        <h2 className="text-center">Choose Your Category</h2>
+        <hr className="divider" />
         <div className="container container-cateogry p-0">
           <div className="row p-0 ml-5">
             {categoryList.map((item) => (

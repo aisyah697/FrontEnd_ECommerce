@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { productCategory } from "../store/actions/actionProduct";
-import { getCart } from "../store/actions/actionCart";
+import { getCart, deleteCart } from "../store/actions/actionCart";
 
 class ShoppingCart extends Component {
   componentDidMount() {
@@ -48,6 +48,8 @@ class ShoppingCart extends Component {
                         price={value.product_id.price}
                         quantity={value.quantity}
                         total={value.price}
+                        id={value.id}
+                        deleteCart={this.props.deleteCart}
                       />
                     ))}
                   </tbody>
@@ -78,6 +80,7 @@ const mapDispatchToProps = {
   doSignOut,
   productCategory,
   getCart,
+  deleteCart,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

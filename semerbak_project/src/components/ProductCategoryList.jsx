@@ -2,21 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ListProductCategory = (props) => {
-  const changeRouter = (productCategory, id) => {
-    productCategory = productCategory.replace(/ /gi, "-");
-    props.history.replace("/category/" + id + "&&" + productCategory);
+  const changeRouter = (product) => {
+    product = product.replace(/ /gi, "-");
+    props.history.replace("/all-products/" + product);
   };
 
   console.log("cek judul kategori", props);
   return (
     <div>
-      <Link onClick={() => changeRouter(`${props.category}`, `${props.id}`)}>
+      <Link onClick={() => changeRouter(`${props.name}`)}>
         <div
           className="card card-list-product p-0 m-3"
           style={{ width: "15rem" }}
         >
           <img
-            src={"http://0.0.0.0:5000/img/" + props.image}
+            src={process.env.REACT_APP_BASE_URL + "img/" + props.image}
             className="card-img-top"
             alt={props.name}
           />

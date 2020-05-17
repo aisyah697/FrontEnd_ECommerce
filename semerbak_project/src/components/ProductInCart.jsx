@@ -13,7 +13,12 @@ const ProductInCart = (props) => {
       <td>{currencyFormatter.format(props.price, { code: "IDR" })}</td>
       <td>{currencyFormatter.format(props.total, { code: "IDR" })}</td>
       <td>
-        <button className="delete-cart">DELETE</button>
+        <button
+          className="delete-cart"
+          onClick={() => props.deleteCart(props.id)}
+        >
+          DELETE
+        </button>
       </td>
     </tr>
   );

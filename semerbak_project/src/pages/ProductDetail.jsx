@@ -33,7 +33,7 @@ class ProductDetail extends Component {
               style={{ width: "30rem" }}
             >
               <img
-                src={"http://0.0.0.0:5000/img/" + item.image}
+                src={process.env.REACT_APP_BASE_URL + "img/" + item.image}
                 className="card-img-top"
                 alt="{item.product_name}"
               />

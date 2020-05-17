@@ -1,11 +1,13 @@
 import axios from "axios";
 
+const base_url = process.env.REACT_APP_BASE_URL
+
 export const doLogin = () => {
     return (dispatch, getState) => {
         const dataUsername = getState().user.inputUsername
         const dataPassword = getState().user.inputPassword
 
-        axios.get("http://0.0.0.0:5000/auth", {
+        axios.get(base_url + "auth", {
                 params: {
                     username: dataUsername,
                     password: dataPassword

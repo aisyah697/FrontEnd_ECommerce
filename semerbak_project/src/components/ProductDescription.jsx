@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 const ProductDescription = (props) => {
-
   return (
     <div>
       <div className="row ml-5 mb-5 mt-5">
@@ -12,7 +10,7 @@ const ProductDescription = (props) => {
           style={{ width: "30rem" }}
         >
           <img
-            src={"http://0.0.0.0:5000/img/" + props.image}
+            src={process.env.REACT_APP_BASE_URL + "img/" + props.image}
             className="card-img-top"
             alt={props.name}
           />
@@ -70,9 +68,7 @@ const ProductDescription = (props) => {
           <br />
           <div>
             <p>Description:</p>
-            <p>
-              {props.description}
-            </p>
+            <p>{props.description}</p>
           </div>
           <div>
             <strong>
