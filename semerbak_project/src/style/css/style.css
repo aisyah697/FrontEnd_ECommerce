@@ -1,0 +1,288 @@
+/* color: #61ad99; */
+
+header {
+    /* background-color: #cad2c5; */
+    font-family: "Jost", sans-serif;
+    color: #f2fffc;
+}
+
+
+/* h1 {
+    display: inline;
+} */
+
+.mini-header-txt {
+    margin-bottom: 0;
+    color: black;
+}
+
+.logo {
+    width: 200px;
+    margin-left: 34px;
+}
+
+.dropdown-toggle {
+    background-color: transparent;
+    color: black;
+}
+
+.dropdown-toggle:hover {
+    background-color: transparent;
+    color: black;
+}
+
+
+/* .form-inline {
+    margin-left: 100px;
+} */
+
+.navbar {
+    justify-content: space-between;
+    background-color: white !important;
+}
+
+.navbar.navbar-expand-lg {
+    background-color: transparent !important;
+    justify-content: center !important;
+    /* margin-left: 34px; */
+}
+
+.btn-outline-success {
+    color: grey;
+    border-color: transparent;
+    border-radius: 0.25rem;
+}
+
+.btn-outline-success:hover {
+    color: #f2fffc;
+}
+
+input[type="search"] {
+    width: 150px !important;
+    /* height: 35px !important; */
+    background-image: url("../../assets/searchicon.jpg");
+    padding: 12px 20px 12px 12px;
+    font-size: 16px;
+    background-size: 20px;
+    background-position: right;
+    background-repeat: no-repeat;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type="search"]:focus {
+    width: 150% !important;
+}
+
+.carousel-item {
+    height: 800px;
+    width: 100%;
+}
+
+.headline {
+    color: #2f3e46;
+}
+
+hr.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: #e76f51;
+}
+
+.img-banner {
+    display: flex;
+    width: 100%;
+}
+
+.gif-home-1 {
+    display: flex;
+    overflow-x: auto;
+}
+
+.btn-shop-now {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border-color: transparent;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-shop-now:hover {
+    background-color: #e76f51;
+    border-color: transparent;
+}
+
+.mini-banner-home {
+    display: flex;
+    float: right;
+    clear: right;
+    overflow-x: auto;
+    /* width: 1009px;
+    height: 375px; */
+}
+
+.text-on-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.btn-get-started {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border-color: transparent;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-get-started:hover {
+    background-color: #e76f51;
+    border-color: transparent;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border-color: transparent;
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e76f51;
+    border-color: transparent;
+}
+
+
+/* LIST PRODUCT */
+
+.list-product-home {
+    justify-content: center;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.row {
+    margin-right: 0;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #e76f51;
+}
+
+
+/* Best Sellers */
+
+.fas.fa-star {
+    color: yellow;
+}
+
+.far.fa-star {
+    color: grey;
+}
+
+.best-seller-home {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+/* product detail */
+
+.card-product-desc {
+    border: none;
+}
+
+.card {
+    border: none;
+}
+
+.banner-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.container-cateogry {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* .category-card {
+    background: url(../../assets/rosehip.jpg) 0 0 no-repeat fixed;
+    height: 100%;
+    overflow: hidden;
+    color: #FFFFFF
+}
+
+.category-card {
+    background: rgba(39, 62, 84, 0.2);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+} */
+
+
+/* footer */
+
+footer {
+    background-color: none;
+    color: black;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    /* padding-top: 10px; */
+    margin-top: 20px;
+}
+
+.footer {
+    overflow-x: auto;
+}
+
+
+/* table */
+
+td {
+    padding-right: 120px;
+}
+
+th {
+    padding-bottom: 10px;
+}
+
+table {
+    margin-right: 0;
+}
+
+
+/* login */
+
+.container {
+    margin: 0;
+    max-width: 100%;
+}
+
+.form-label-group {
+    margin-bottom: 10px;
+    overflow-x: auto;
+}
+
+
+/* sign up */
+
+.sign-up-space-between {
+    display: flex;
+    justify-content: space-between;
+}
