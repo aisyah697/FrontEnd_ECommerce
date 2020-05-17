@@ -25,8 +25,8 @@ class ShoppingCart extends Component {
         {is_login ? (
           <div>
             <Navigation {...this.props} />
-            <div className="container mx-5">
-              <table class="table table-hover">
+            <div className="container table-cart-container">
+              <table class="table table-hover table-cart">
                 <thead>
                   <tr>
                     <th scope="col">No.</th>
@@ -34,17 +34,20 @@ class ShoppingCart extends Component {
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
                     <th scope="col">Total</th>
+                    <th></th>
                   </tr>
                 </thead>
+
                 {cart.map((item) => (
                   <tbody>
                     {item.transaction_detail.map((value, index) => (
                       <ProductInCart
                         index={index + 1}
                         name={value.product_id.product_name}
-                        price={value.price}
+                        image={value.product_id.image}
+                        price={value.product_id.price}
                         quantity={value.quantity}
-                        total={value.price * value.quantity}
+                        total={value.price}
                       />
                     ))}
                   </tbody>

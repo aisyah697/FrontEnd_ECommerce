@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import ListProduct from "../components/ListProduct";
 import ProductCategoryHome from "../components/ProductCategoryHome";
 import BestSeller from "../components/BestSeller";
 import { doSignOut } from "../store/actions/actionUser";
@@ -18,8 +19,9 @@ class Home extends Component {
 
   render() {
     const categoryList = this.props.dataCategory.categoryList;
+    const newArrivals = this.props.dataProduct.productList.slice(0, 4);
 
-    // console.log("cekiniapa", categoryList);
+    console.log("cek new arrivals", this.props);
     return (
       <div className="body">
         <Navigation {...this.props} />
@@ -37,7 +39,16 @@ class Home extends Component {
         </div>
         <h1 className="headline text-center">New Arrivals</h1>
         <hr className="divider my-2" />
-        <BestSeller />
+        <div className="row justify-content-center">
+          {newArrivals.map((value) => (
+            <ListProduct
+              {...this.props}
+              name={value.product_name}
+              price={value.price}
+              image={value.image}
+            />
+          ))}
+        </div>
         <div>
           <h1 className="headline text-center mt-4">Best Sellers</h1>
           <hr className="divider my-2" />

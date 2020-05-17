@@ -10,18 +10,19 @@ const ProductCategoryHome = (props) => {
   return (
     <div>
       <Link onClick={() => changeRouter(`${props.category}`, `${props.id}`)}>
-        <div className="card-body text-center p-0">
-          <p className="card-text m-0">{props.category}</p>
-        </div>
         <div
-          className="card card-list-product p-0 m-3"
+          className="card card-list-product card-list-category p-0 m-3"
           style={{ width: "15rem" }}
         >
           <img
             src={require("../assets/mini-banner-home.jpg")}
-            className="card-img-top"
+            className="card-img-top img-category"
             alt={props.category}
           />
+          <div className="text-content">
+            <p className="card-text m-0">{props.category}</p>
+            <hr className="divider ml-auto mt-0"></hr>
+          </div>
         </div>
       </Link>
     </div>

@@ -3,7 +3,11 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import ListProduct from "../components/ListProduct";
 import { doSignOut } from "../store/actions/actionUser";
-import { allProducts } from "../store/actions/actionProduct";
+import {
+  allProducts,
+  handleInputChange,
+  searchProduct,
+} from "../store/actions/actionProduct";
 import { connect } from "react-redux";
 // import { Redirect } from "react-router-dom";
 
@@ -17,7 +21,12 @@ class AllProducts extends Component {
     const productList = this.props.productList.productList;
     return (
       <div>
-        <Navigation {...this.props} />
+        <Navigation
+          // doSearch={(event) => this.props.handleInputChange(event)}
+          // keyword={this.props.search}
+          // placeholder="Search"
+          {...this.props}
+        />
         <h1 className="text-center">All Products</h1>
         <hr className="divider" />
         <div className="container">
@@ -49,6 +58,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   doSignOut,
   allProducts,
+  // handleInputChange: (event) => handleInputChange(event),
+  // searchProduct: (keyword) => searchProduct(keyword),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllProducts);

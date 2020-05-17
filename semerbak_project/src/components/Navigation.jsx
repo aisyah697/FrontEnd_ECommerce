@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 const Navigation = (props) => {
   const postSignOut = async () => {
@@ -31,6 +32,7 @@ const Navigation = (props) => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          {/* <Search {...props} /> */}
           <form className="form-inline my-2 my-lg-0">
             <input
               className="form-control"
@@ -38,7 +40,6 @@ const Navigation = (props) => {
               placeholder="Search"
               aria-label="Search"
             />
-            {/* <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i className="fas fa-search"></i></button> */}
           </form>
           <div>
             <ul className="navbar-nav mr-auto">
@@ -59,7 +60,7 @@ const Navigation = (props) => {
               <li className="nav-item">
                 {props.dataUser.is_login ? (
                   <Link className="nav-link" to="/profile">
-                    <i className="fas fa-user-alt"></i> My Account
+                    <i className="fas fa-user-alt"></i> Profile
                   </Link>
                 ) : (
                   <Link class="nav-item nav-link" to="/login">

@@ -30,3 +30,29 @@ export const productCategory = () => {
             .catch((error) => (console.error(error)))
     }
 }
+
+export const handleInputChange = (event) => {
+    let value = event.target.value;
+    return async(dispatch) => {
+        await dispatch({ type: "SEARCH_PRODUCT", payload: value });
+        dispatch(searchProduct(value));
+    };
+}
+
+export const searchProduct = (keyword) => {
+    return async(dispatch) => {
+        if (keyword.length > 2) {
+            try {
+                const getProduct = await axios.get(
+                    "http://0.0.0.0:5000/product/list"
+                );
+                dispatch({
+                    type: "GET_ALL_PRODUCTS",
+                    payload: getProduct,
+                });
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    };
+};

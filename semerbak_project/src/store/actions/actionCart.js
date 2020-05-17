@@ -20,18 +20,16 @@ export const getCart = () => {
 }
 
 export const postCart = (product_id) => {
-    return (getState) => {
-        let bodyRequest = {
-            product_id,
-            quantity: getState().cart.quantity
-        }
-        bodyRequest = JSON.stringify(bodyRequest)
-        axios.post("http://0.0.0.0:5000/transaction", bodyRequest, {
-                headers: {
-                    "Authorization": "Bearer " + getState().user.token
-                }
-            })
-            .catch((error) => (console.error(error)))
+    return (dispatch, getState) => {
+        axios({
+            method: "POST",
+            url: "http://0.0.0.0:5000/transaction",
+            headers: { Authorization: `Bearer ${getState().user.token}` },
+            params: {
+                product_id: product_id,
+                quantity: getState().cart.quantity
+            }
+        })
     }
 }
 

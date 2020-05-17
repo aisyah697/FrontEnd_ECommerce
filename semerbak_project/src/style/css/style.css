@@ -161,6 +161,20 @@ button:hover {
     border-color: transparent;
 }
 
+#cart-button {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border-color: transparent;
+    background-color: #383a3d;
+    color: white;
+    border-radius: 4px;
+}
+
+#cart-button:hover {
+    background-color: #e76f51;
+    border-color: transparent;
+}
+
 
 /* LIST PRODUCT */
 
@@ -221,19 +235,60 @@ a:hover {
 }
 
 
-/* .category-card {
-    background: url(../../assets/rosehip.jpg) 0 0 no-repeat fixed;
-    height: 100%;
-    overflow: hidden;
-    color: #FFFFFF
+/* category card in home */
+
+.card-list-category {
+    position: relative;
+    transition: .2s;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.8);
 }
 
-.category-card {
-    background: rgba(39, 62, 84, 0.2);
-    overflow: hidden;
-    height: 100%;
-    z-index: 2;
-} */
+.card-list-category .text-content,
+.card-list-category:after {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+}
+
+.card-list-category:after {
+    content: '';
+    display: block;
+    background: crimson;
+    bottom: 20px;
+    opacity: 0;
+    transform: rotate3d(-1, 1, 0, 100deg);
+    transition: .4s;
+}
+
+.card-list-category:hover::after {
+    opacity: -9;
+    transform: rotate3d(0, 0, 0, 0deg);
+}
+
+.text-content {
+    top: 50%;
+    opacity: 0;
+    z-index: 1;
+    transform: translate(10%, -30%);
+    transition: .2s;
+    text-align: center;
+    color: black;
+}
+
+.text-content p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-list-category:hover .text-content {
+    opacity: 1;
+    transform: translate(0, -50%);
+    transition-delay: .2s;
+}
+
+.img-category {
+    opacity: 0.7;
+}
 
 
 /* footer */
@@ -262,8 +317,12 @@ th {
     padding-bottom: 10px;
 }
 
-table {
+.table-footer {
     margin-right: 0;
+}
+
+.table-cart-container {
+    text-align: center;
 }
 
 
@@ -285,4 +344,93 @@ table {
 .sign-up-space-between {
     display: flex;
     justify-content: space-between;
+}
+
+
+/* cart */
+
+.delete-cart {
+    padding: 2px 7px;
+    border-radius: 3px;
+    border-color: transparent;
+    background-color: #e76f51;
+    color: white;
+    transition: 0.3s;
+}
+
+.delete-cart:hover {
+    background-color: black;
+    border-color: transparent;
+}
+
+
+/* button plus minus */
+
+.qty .count {
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 0 2px;
+    min-width: 35px;
+    text-align: center;
+}
+
+.qty .plus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial, sans-serif;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.qty .minus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial, sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    background-clip: padding-box;
+}
+
+.minus:hover {
+    background-color: #e76f51 !important;
+}
+
+.plus:hover {
+    background-color: #e76f51 !important;
+}
+
+
+/*Prevent text selection*/
+
+span {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+input {
+    border: 0;
+    width: 2%;
+}
+
+nput::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:disabled {
+    background-color: white;
 }

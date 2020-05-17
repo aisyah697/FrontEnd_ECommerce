@@ -6,6 +6,7 @@ const ListProductCategory = (props) => {
     productCategory = productCategory.replace(/ /gi, "-");
     props.history.replace("/category/" + id + "&&" + productCategory);
   };
+
   console.log("cek judul kategori", props);
   return (
     <div>

@@ -5,7 +5,7 @@ const Footer = (props) => {
     <div className="footer">
       <footer>
         <hr />
-        <table>
+        <table className="table-footer">
           <tr>
             <th>Customer Care</th>
             <th>Customer Service</th>

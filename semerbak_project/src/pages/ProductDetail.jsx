@@ -6,6 +6,7 @@ import { doSignOut } from "../store/actions/actionUser";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { allProducts } from "../store/actions/actionProduct";
+import { postCart, updateInputQty } from "../store/actions/actionCart";
 
 class ProductDetail extends Component {
   componentDidMount() {
@@ -19,10 +20,7 @@ class ProductDetail extends Component {
     const productDetail = this.props.dataProduct.productList.filter(
       (item) => item.product_name === productName
     );
-    // const product = productDetail.map((value) => ({
-    //   name: value.product_name,
-    //   image: value.image,
-    // }));
+
     console.warn("cek nama produk", productDetail);
 
     return (
@@ -64,28 +62,24 @@ class ProductDetail extends Component {
                     <label for>Quantity:</label>
                   </strong>
                   <div className="wrapper">
-                    <div className="quantity-selector">
-                      <div className="wrapper">
-                        <input type="text" name="quantity" size="4" value="1" />
-                        <div className="plus-minus-box">
-                          <div className="plus-minus-icon-plus">
-                            <span>
-                              <i className="fas fa-plus-circle"></i>
-                            </span>
-                          </div>
-                          <div className="plus-minus-icon-minus">
-                            <span>
-                              <i className="fas fa-minus-circle"></i>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="qty">
+                      <span class="minus bg-dark">-</span>
+                      <input
+                        type="number"
+                        class="count"
+                        name="qty"
+                        value="1"
+                        onChange={(event) => this.props.updateInputQty(event)}
+                      />
+                      <span class="plus bg-dark">+</span>
                     </div>
-                    <div className="add-to-cart-button">
+
+                    <div className="add-to-cart-button mt-2">
                       <Link
                         id="cart-button"
                         className="btn"
                         to="/shopping-cart"
+                        onClick={() => this.props.postCart(item.id)}
                       >
                         <i className="fas fa-cart-plus"></i> ADD TO CART
                       </Link>
@@ -211,6 +205,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   doSignOut,
   allProducts,
+  updateInputQty,
+  postCart,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);

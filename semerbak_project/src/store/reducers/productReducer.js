@@ -2,6 +2,7 @@ const initialProductState = {
     productList: [],
     categoryID: {},
     categoryList: [],
+    serach: "",
 }
 
 export default function productReducer(productState = initialProductState, action) {
@@ -16,7 +17,12 @@ export default function productReducer(productState = initialProductState, actio
                 ...productState,
                 categoryList: action.payload
             }
+        case "SEARCH_PRODUCT":
+            return {
+                ...productState,
+                search: action.payload
+            }
         default:
-            return productState
+            return productState;
     }
 }
