@@ -26,7 +26,7 @@ const Footer = (props) => {
           <tr>
             <td>FAQs</td>
             <td>
-              <i className="fas fa-envelope"></i> custservice@title.com
+              <i className="fas fa-envelope"></i> custservice@semerbak.com
             </td>
           </tr>
           <tr>

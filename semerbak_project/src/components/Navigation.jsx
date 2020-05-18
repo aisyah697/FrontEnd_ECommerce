@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Search from "./Search";
 
 const Navigation = (props) => {
   const postSignOut = async () => {
@@ -19,7 +18,13 @@ const Navigation = (props) => {
         </p>
       </header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light mt-4">
-        <img className="logo" src={require("../assets/logo.jpg")} alt="logo" />
+        <Link to="/">
+          <img
+            className="logo"
+            src={require("../assets/logo.jpg")}
+            alt="logo"
+          />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -35,7 +40,6 @@ const Navigation = (props) => {
           className="collapse navbar-collapse ml-3"
           id="navbarSupportedContent"
         >
-          {/* <Search {...props} /> */}
           <form className="form-inline my-2 my-lg-0 justify-content-center">
             <input
               className="form-control"
@@ -46,6 +50,11 @@ const Navigation = (props) => {
           </form>
           <div className="navbar-top-menu">
             <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to="/all-products">
+                  Shop
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/">
                   Home

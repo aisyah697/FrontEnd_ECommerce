@@ -7,7 +7,6 @@ import BestSeller from "../components/BestSeller";
 import { doSignOut } from "../store/actions/actionUser";
 import { allProducts } from "../store/actions/actionProduct";
 import { productCategory } from "../store/actions/actionProduct";
-// import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -21,7 +20,6 @@ class Home extends Component {
     const categoryList = this.props.dataCategory.categoryList;
     const newArrivals = this.props.dataProduct.productList.slice(0, 4);
 
-    console.log("cek new arrivals", this.props);
     return (
       <div className="body">
         <Navigation {...this.props} />
@@ -38,11 +36,7 @@ class Home extends Component {
               <hr className="hr-banner" />
               <h2>We Bring Aromas to The Next Level</h2>
             </div>
-            <div>
-              {/* <button className="btn-get-started text-center ">
-                GET YOUR SEMERBAK
-              </button> */}
-            </div>
+            <div></div>
           </div>
         </div>
         <h1 className="headline text-center">New Arrivals</h1>

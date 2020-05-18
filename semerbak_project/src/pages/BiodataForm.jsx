@@ -5,7 +5,7 @@ import { doSignOut, doLogin } from "../store/actions/actionUser";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
-class AddProduct extends Component {
+class BiodataForm extends Component {
   render() {
     const is_login = this.props.dataUser.is_login;
     return (
@@ -13,11 +13,11 @@ class AddProduct extends Component {
         {is_login ? (
           <div>
             <Navigation {...this.props} />
-            <h2 className="text-center my-3">ADD PRODUCT</h2>
+            <h2 className="text-center my-3">BIODATA FORM</h2>
             <hr className="divider" />
             <form className="mx-5 my-3">
               <div class="form-group">
-                <label for="exampleInputEmail1">Product name:</label>
+                <label for="exampleInputEmail1">Full Name:</label>
                 <input
                   type="text"
                   class="form-control"
@@ -26,17 +26,7 @@ class AddProduct extends Component {
                 />
               </div>
               <div class="form-group">
-                <label for="exampleFormControlFile1">
-                  Upload product image:
-                </label>
-                <input
-                  type="file"
-                  class="form-control-file"
-                  id="exampleFormControlFile1"
-                />
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Price:</label>
+                <label for="exampleInputPassword1">Phone Number:</label>
                 <input
                   type="text"
                   class="form-control"
@@ -44,7 +34,7 @@ class AddProduct extends Component {
                 />
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Description:</label>
+                <label for="exampleInputPassword1">Address:</label>
                 <input
                   type="text"
                   class="form-control"
@@ -52,7 +42,7 @@ class AddProduct extends Component {
                 />
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Stock:</label>
+                <label for="exampleInputPassword1">Province:</label>
                 <input
                   type="text"
                   class="form-control"
@@ -60,25 +50,31 @@ class AddProduct extends Component {
                 />
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Category:</label>
+                <label for="exampleInputPassword1">City:</label>
                 <input
                   type="text"
                   class="form-control"
                   id="exampleInputPassword1"
                 />
               </div>
-              <div class="form-check">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Subdistrict:</label>
                 <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck1"
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
                 />
-                <label class="form-check-label mb-2" for="exampleCheck1">
-                  I agree to all terms & conditions
-                </label>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Postal Code:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
               </div>
               <button type="submit" class="btn btn-primary">
-                Submit
+                Save
               </button>
             </form>
             <Footer />
@@ -101,4 +97,4 @@ const mapDispatchToProps = {
   doLogin,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(BiodataForm);

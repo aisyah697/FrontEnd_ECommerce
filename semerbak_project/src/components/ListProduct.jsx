@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+var currencyFormatter = require("currency-formatter");
+
 const ListProduct = (props) => {
   const changeRouter = (productName) => {
     productName = productName.replace(/ /gi, "-");
@@ -20,7 +22,9 @@ const ListProduct = (props) => {
           />
           <div className="card-body text-center p-0">
             <p className="card-text m-0">{props.name}</p>
-            <p className="card-text">IDR {props.price}</p>
+            <p className="card-text">
+              {currencyFormatter.format(props.price, { code: "IDR" })}
+            </p>
           </div>
         </div>
       </Link>

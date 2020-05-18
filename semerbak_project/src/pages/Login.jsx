@@ -13,7 +13,6 @@ class Login extends Component {
   postLogin = async () => {
     await this.props.doLogin();
     const is_login = this.props.dataUser.is_login;
-    console.log("cek props", this.props.dataUser.is_login);
     if (is_login) {
       this.props.history.replace("/");
     }

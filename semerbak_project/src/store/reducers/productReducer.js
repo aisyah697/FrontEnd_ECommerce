@@ -3,6 +3,15 @@ const initialProductState = {
     categoryID: {},
     categoryList: [],
     serach: "",
+    productName: "",
+    price: 0,
+    image: "",
+    weight: "",
+    stock: 0,
+    description: "",
+    promo: "",
+    discount: 0,
+    category: "",
 }
 
 export default function productReducer(productState = initialProductState, action) {
@@ -21,6 +30,11 @@ export default function productReducer(productState = initialProductState, actio
             return {
                 ...productState,
                 search: action.payload
+            }
+        case "ADD_PRODUCT_SUCCESS":
+            return {
+                ...productState,
+                statusError: false
             }
         default:
             return productState;

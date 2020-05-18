@@ -6,7 +6,6 @@ import { doSignOut } from "../store/actions/actionUser";
 import { productCategory } from "../store/actions/actionProduct";
 import { connect } from "react-redux";
 import { allProducts } from "../store/actions/actionProduct";
-// import { Redirect } from "react-router-dom";
 
 class ProductCategory extends Component {
   componentDidMount() {

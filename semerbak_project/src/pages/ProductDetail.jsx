@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { doSignOut } from "../store/actions/actionUser";
-// import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { allProducts } from "../store/actions/actionProduct";
@@ -20,8 +19,6 @@ class ProductDetail extends Component {
     const productDetail = this.props.dataProduct.productList.filter(
       (item) => item.product_name === productName
     );
-
-    console.warn("cek nama produk", productDetail);
 
     return (
       <div>
@@ -68,7 +65,7 @@ class ProductDetail extends Component {
                         type="number"
                         class="count"
                         name="qty"
-                        value="1"
+                        defaultValue="1"
                         onChange={(event) => this.props.updateInputQty(event)}
                       />
                       <span class="plus bg-dark">+</span>
@@ -200,6 +197,7 @@ class ProductDetail extends Component {
 const mapStateToProps = (state) => ({
   dataUser: state.user,
   dataProduct: state.product,
+  dataCart: state.cart,
 });
 
 const mapDispatchToProps = {

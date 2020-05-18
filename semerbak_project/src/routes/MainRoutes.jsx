@@ -15,6 +15,8 @@ import AddProduct from "../pages/AddProduct";
 import ProductDetail from "../pages/ProductDetail";
 import ProductCategory from "../pages/ProductCategory";
 import ShoppingCart from "../pages/ShoppingCart";
+import BiodataForm from "../pages/BiodataForm";
+import NotFound from "../pages/NotFound";
 
 const MainRoutes = () => {
   return (
@@ -25,6 +27,7 @@ const MainRoutes = () => {
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/profile" component={Profile} />
+          <Route path="/form-biodata" component={BiodataForm} />
           <Route path="/add-product" component={AddProduct} />
           <Route path="/my-products" component={MyProducts} />
           <Route exact path="/all-products" component={AllProducts} />
@@ -33,6 +36,7 @@ const MainRoutes = () => {
           <Route path="/checkout" component={Checkout} />
           <Route path="/all-products/:product_name" component={ProductDetail} />
           <Route path="/category/:category" component={ProductCategory} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </Provider>

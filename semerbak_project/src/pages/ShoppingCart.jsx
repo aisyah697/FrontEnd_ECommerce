@@ -18,7 +18,6 @@ class ShoppingCart extends Component {
   render() {
     const is_login = this.props.dataUser.is_login;
     const cart = this.props.dataCart.cart;
-    console.log("cek cek cart", cart);
 
     return (
       <div>

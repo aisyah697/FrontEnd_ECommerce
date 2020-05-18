@@ -22,10 +22,6 @@ export default function userReducer(userState = initialState, action) {
             return {
                 ...userState,
                 token: action.payload.token,
-                // username: action.payload.username,
-                // email: action.payload.email,
-                // avatar: action.payload.avatar,
-                // address: action.payload.address,
                 is_login: true,
             };
         case "LOGOUT_SUCCESS":
