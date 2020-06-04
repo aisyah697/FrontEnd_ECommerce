@@ -1,9 +1,11 @@
 import axios from "axios"
 
+const url = process.env.REACT_APP_BASE_URL
+
 export const allProducts = () => {
     return (dispatch) => {
         axios
-            .get("http://0.0.0.0:5000/product/list")
+            .get(url + "product/list")
             .then((response) => {
                 console.warn("check product action", response)
                 dispatch({
@@ -20,7 +22,7 @@ export const allProducts = () => {
 export const productCategory = () => {
     return (dispatch) => {
         axios
-            .get("http://0.0.0.0:5000/product_category")
+            .get(url + "product_category")
             .then((response) => {
                 dispatch({
                     type: "GET_PRODUCT_CATEGORY",
@@ -74,7 +76,7 @@ export const addProduct = (props) => {
         const myJSON = JSON.stringify(bodyRequest);
         const token = localStorage.getItem("token");
         await axios
-            .post("http://0.0.0.0:5050/items", myJSON, {
+            .post(url + "items", myJSON, {
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
                     Accept: "application/json; charset=utf-8",
@@ -96,7 +98,7 @@ export const searchProduct = (keyword) => {
         if (keyword.length > 2) {
             try {
                 const getProduct = await axios.get(
-                    "http://0.0.0.0:5000/product/list"
+                    url + "product/list"
                 );
                 dispatch({
                     type: "GET_ALL_PRODUCTS",

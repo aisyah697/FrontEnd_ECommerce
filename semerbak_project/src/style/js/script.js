@@ -2,10 +2,10 @@ const $ = window.$;
 
 $(document).ready(function() {
     $('.count').prop('disabled', true);
-    $(document).on('click', '.plus', function() {
+    $(document).on('change', '.plus', function() {
         $('.count').val(parseInt($('.count').val()) + 1);
     });
-    $(document).on('click', '.minus', function() {
+    $(document).on('change', '.minus', function() {
         $('.count').val(parseInt($('.count').val()) - 1);
         if ($('.count').val() === 0) {
             $('.count').val(1);

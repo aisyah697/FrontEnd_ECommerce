@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 
 class BiodataForm extends Component {
   render() {
-    const is_login = this.props.dataUser.is_login;
+    const is_login = localStorage.getItem("token");
     return (
       <div>
         {is_login ? (

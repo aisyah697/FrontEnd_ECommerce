@@ -15,6 +15,8 @@ export const doLogin = () => {
             })
             .then((response) => {
                 dispatch({ type: "LOGIN_SUCCESS", payload: response.data })
+                localStorage.setItem("token", response.data.token);
+                localStorage.setItem("is_login", true);
             })
             .catch((error) => {
                 alert("Wrong username or password!")
@@ -55,6 +57,8 @@ export const changeInputPassword = (e) => {
 };
 
 export const doSignOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("is_login");
     return {
         type: "LOGOUT_SUCCESS",
     };

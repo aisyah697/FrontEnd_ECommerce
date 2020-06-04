@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 const Navigation = (props) => {
+  const is_login = localStorage.getItem("token");
+
   const postSignOut = async () => {
     await props.doSignOut();
-    if (!props.dataUser.is_login) {
+    if (!is_login) {
       console.log("cek cek", this);
       props.history.replace("/login");
     }
@@ -61,7 +63,7 @@ const Navigation = (props) => {
                 </Link>
               </li>
               <li className="nav-item">
-                {props.dataUser.is_login ? (
+                {is_login ? (
                   <Link className="nav-link" to="/shopping-cart">
                     <i className="fas fa-shopping-cart"></i> Cart
                   </Link>
@@ -70,7 +72,7 @@ const Navigation = (props) => {
                 )}
               </li>
               <li className="nav-item">
-                {props.dataUser.is_login ? (
+                {is_login ? (
                   <Link className="nav-link" to="/profile">
                     <i className="fas fa-user-alt"></i> Profile
                   </Link>
@@ -81,7 +83,7 @@ const Navigation = (props) => {
                 )}
               </li>
               <li className="nav-item">
-                {props.dataUser.is_login ? (
+                {is_login ? (
                   <Link class="nav-item nav-link" onClick={() => postSignOut()}>
                     Sign Out
                   </Link>

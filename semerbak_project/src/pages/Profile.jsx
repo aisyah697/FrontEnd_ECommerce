@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { connect } from "react-redux";
-import { doSignOut } from "../store/actions/actionUser";
+import { doLogin, doSignOut } from "../store/actions/actionUser";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 class Profile extends Component {
   render() {
-    const is_login = this.props.dataUser.is_login;
+    const is_login = localStorage.getItem("token");
     return (
       <div>
         {is_login ? (
@@ -43,6 +43,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   doSignOut,
+  doLogin,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

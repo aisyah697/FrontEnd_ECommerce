@@ -13,7 +13,7 @@ import {
 class Register extends Component {
   postRegister = async () => {
     await this.props.doRegister();
-    const is_login = this.props.dataUser.is_login;
+    const is_login = localStorage.getItem("token");
     if (is_login) {
       this.props.history.replace("/login");
     }

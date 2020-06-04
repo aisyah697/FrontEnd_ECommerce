@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import ListProduct from "../components/ListProduct";
 import ProductCategoryHome from "../components/ProductCategoryHome";
 import BestSeller from "../components/BestSeller";
-import { doSignOut } from "../store/actions/actionUser";
+import { doLogin, doSignOut } from "../store/actions/actionUser";
 import { allProducts } from "../store/actions/actionProduct";
 import { productCategory } from "../store/actions/actionProduct";
 import { connect } from "react-redux";
@@ -107,6 +107,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   doSignOut,
+  doLogin,
   allProducts,
   productCategory,
 };

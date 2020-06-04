@@ -13,7 +13,7 @@ class MyProducts extends Component {
     this.props.allProducts();
   }
   render() {
-    const is_login = this.props.dataUser.is_login;
+    const is_login = localStorage.getItem("token");
     const productList = this.props.productList.productList;
 
     return (

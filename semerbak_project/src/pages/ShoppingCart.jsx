@@ -16,7 +16,7 @@ class ShoppingCart extends Component {
   }
 
   render() {
-    const is_login = this.props.dataUser.is_login;
+    const is_login = localStorage.getItem("token");
     const cart = this.props.dataCart.cart;
 
     return (

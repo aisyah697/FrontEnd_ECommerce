@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 class Login extends Component {
   postLogin = async () => {
     await this.props.doLogin();
-    const is_login = this.props.dataUser.is_login;
+    const is_login = localStorage.getItem("token");
     if (is_login) {
       this.props.history.replace("/");
     }
