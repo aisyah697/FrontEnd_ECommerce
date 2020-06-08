@@ -34,7 +34,7 @@ export default function productReducer(
                 ...productState,
                 search: action.payload,
             };
-        case "CHANGE_INPUT_ARTICLE":
+        case "CHANGE_INPUT_PRODUCT":
             return {
                 ...productState,
                 [action.payload.target.name]: action.payload.target.value,
