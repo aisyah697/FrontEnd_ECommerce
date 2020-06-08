@@ -12,40 +12,43 @@ const initialProductState = {
     promo: "",
     discount: 0,
     category: "",
-}
+};
 
-export default function productReducer(productState = initialProductState, action) {
+export default function productReducer(
+    productState = initialProductState,
+    action
+) {
     switch (action.type) {
         case "GET_ALL_PRODUCTS":
             return {
                 ...productState,
-                productList: action.payload
-            }
+                productList: action.payload,
+            };
         case "GET_PRODUCT_CATEGORY":
             return {
                 ...productState,
-                categoryList: action.payload
-            }
+                categoryList: action.payload,
+            };
         case "SEARCH_PRODUCT":
             return {
                 ...productState,
-                search: action.payload
-            }
+                search: action.payload,
+            };
         case "CHANGE_INPUT_ARTICLE":
             return {
-                ...articleState,
+                ...productState,
                 [action.payload.target.name]: action.payload.target.value,
             };
         case "CHANGE_INPUT_FILE":
             return {
-                ...articleState,
+                ...productState,
                 [action.payload.target.name]: action.payload.target.files[0],
             };
         case "ADD_PRODUCT_SUCCESS":
             return {
                 ...productState,
-                statusError: false
-            }
+                statusError: false,
+            };
         default:
             return productState;
     }
