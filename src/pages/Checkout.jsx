@@ -179,8 +179,10 @@ class Checkout extends Component {
             </div>
 
             {cart.map((value) => {
-              totalPrice += value.transaction.total_price;
-              totalQty += value.transaction.total_qty;
+              <div>
+                totalPrice += value.transaction.total_price; totalQty +=
+                value.transaction.total_qty;
+              </div>;
             })}
             <div class="card order-summary">
               <div class="card-header">
