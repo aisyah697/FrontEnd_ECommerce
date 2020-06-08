@@ -33,6 +33,7 @@ class Home extends Component {
           <div className="banner-content">
             <div className="text-on-banner text-center mt-2">
               <h1>THE BEST QUALITY ESSENTIAL OILS</h1>
+              <h1>TEST</h1>
               <hr className="hr-banner" />
               <h2>We Bring Aromas to The Next Level</h2>
             </div>
@@ -62,9 +63,9 @@ class Home extends Component {
             <div className="col-sm p-0">
               <img src={require("../assets/gif1.gif")} alt="" />
             </div>
-            <div className="col-sm pl-0 my-4 text-center">
+            <div className="persuasive-title col-sm pl-0 my-4 text-center">
               <h1>EXPERIENCE OUR SEMERBAK COLLECTION</h1>
-              <p className="mx-5 mt-5">
+              <p className="persuasive-p mx-5 mt-5">
                 Breathe deeply.
                 <br />
                 Our essential oils and oil blends take you on a sensory journey
@@ -80,7 +81,7 @@ class Home extends Component {
         <h2 className="text-center">Choose Your Category</h2>
         <hr className="divider" />
         <div className="container container-cateogry p-0">
-          <div className="row p-0 ml-5">
+          <div className="row category-box p-0 ml-5">
             {categoryList.map((item) => (
               <div className="col-sm">
                 <ProductCategoryHome

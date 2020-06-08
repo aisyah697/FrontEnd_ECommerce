@@ -24,7 +24,7 @@ class ProductDetail extends Component {
       <div>
         <Navigation {...this.props} />
         {productDetail.map((item) => (
-          <div className="row ml-5 mb-5 mt-5">
+          <div className="row row-product-detail ml-5 mb-5 mt-5">
             <div
               className="card card-product-desc col-sm-6"
               style={{ width: "30rem" }}
@@ -114,7 +114,7 @@ class ProductDetail extends Component {
         ))}
 
         <hr />
-        <div className="col-7 m-0 p-0">
+        <div className="col-md-7 col-sm-12 m-0 p-0">
           <div className="mt-3 ml-5">
             <h5>What People Think About This Product</h5>
             <span>
