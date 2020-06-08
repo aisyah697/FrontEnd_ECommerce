@@ -179,7 +179,7 @@ class Checkout extends Component {
             </div>
 
             {cart.map((value) => {
-              <div></div>;
+              <div> </div>;
               totalPrice += value.transaction.total_price;
               totalQty += value.transaction.total_qty;
             })}
