@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { doSignOut } from "../store/actions/actionUser";
@@ -179,9 +179,9 @@ class Checkout extends Component {
             </div>
 
             {cart.map((value) => {
-              <div> </div>;
               totalPrice += value.transaction.total_price;
               totalQty += value.transaction.total_qty;
+              return <Fragment></Fragment>;
             })}
             <div class="card order-summary">
               <div class="card-header">
