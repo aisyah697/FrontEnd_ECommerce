@@ -31,6 +31,16 @@ export default function productReducer(productState = initialProductState, actio
                 ...productState,
                 search: action.payload
             }
+        case "CHANGE_INPUT_ARTICLE":
+            return {
+                ...articleState,
+                [action.payload.target.name]: action.payload.target.value,
+            };
+        case "CHANGE_INPUT_FILE":
+            return {
+                ...articleState,
+                [action.payload.target.name]: action.payload.target.files[0],
+            };
         case "ADD_PRODUCT_SUCCESS":
             return {
                 ...productState,

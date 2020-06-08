@@ -1,23 +1,23 @@
-import axios from "axios"
+import axios from "axios";
 
-const url = process.env.REACT_APP_BASE_URL
+const url = process.env.REACT_APP_BASE_URL;
 
 export const allProducts = () => {
     return (dispatch) => {
         axios
             .get(url + "product/list")
             .then((response) => {
-                console.warn("check product action", response)
+                console.warn("check product action", response);
                 dispatch({
                     type: "GET_ALL_PRODUCTS",
-                    payload: response.data
-                })
+                    payload: response.data,
+                });
             })
             .catch((error) => {
-                console.warn(error)
-            })
-    }
-}
+                console.warn(error);
+            });
+    };
+};
 
 export const productCategory = () => {
     return (dispatch) => {
@@ -26,12 +26,12 @@ export const productCategory = () => {
             .then((response) => {
                 dispatch({
                     type: "GET_PRODUCT_CATEGORY",
-                    payload: response.data
-                })
+                    payload: response.data,
+                });
             })
-            .catch((error) => (console.error(error)))
-    }
-}
+            .catch((error) => console.error(error));
+    };
+};
 
 export const handleInputChange = (event) => {
     let value = event.target.value;
@@ -39,7 +39,7 @@ export const handleInputChange = (event) => {
         await dispatch({ type: "SEARCH_PRODUCT", payload: value });
         dispatch(searchProduct(value));
     };
-}
+};
 
 export const addProduct = (props) => {
     return async(dispatch, getState) => {
@@ -92,14 +92,11 @@ export const addProduct = (props) => {
     };
 };
 
-
 export const searchProduct = (keyword) => {
     return async(dispatch) => {
         if (keyword.length > 2) {
             try {
-                const getProduct = await axios.get(
-                    url + "product/list"
-                );
+                const getProduct = await axios.get(url + "product/list");
                 dispatch({
                     type: "GET_ALL_PRODUCTS",
                     payload: getProduct,
@@ -108,5 +105,46 @@ export const searchProduct = (keyword) => {
                 console.error(error);
             }
         }
+    };
+};
+
+export const changeInputProduct = (e) => {
+    return {
+        type: "CHANGE_INPUT_PRODUCT",
+        payload: e,
+    };
+};
+
+export const fileSelectedHandler = (e) => {
+    return {
+        type: "CHANGE_INPUT_FILE",
+        payload: e,
+    };
+};
+
+export const postProduct = () => {
+    return async(dispatch, getState) => {
+        const token = localStorage.getItem("token");
+
+        const inputData = new FormData();
+        inputData.append("productName", getState().article.productName);
+        inputData.append("price", getState().article.price);
+        inputData.append("image", getState().article.image);
+        inputData.append("stock", getState().article.stock);
+        inputData.append("weight", getState().article.weight);
+        inputData.append("category", getState().article.category);
+        inputData.append("description", getState().article.description);
+        inputData.append("createdAt", getState().article.created_at);
+        inputData.append("updatedAt", getState().article.updated_at);
+
+        axios({
+            method: "POST",
+            url: url + "article",
+            data: inputData,
+            headers: {
+                "Content-Type": "multipart/form-data",
+                Authorization: `Bearer ${token}`,
+            },
+        });
     };
 };
