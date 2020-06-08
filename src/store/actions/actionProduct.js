@@ -127,19 +127,19 @@ export const postProduct = () => {
         const token = localStorage.getItem("token");
 
         const inputData = new FormData();
-        inputData.append("productName", getState().article.productName);
-        inputData.append("price", getState().article.price);
-        inputData.append("image", getState().article.image);
-        inputData.append("stock", getState().article.stock);
-        inputData.append("weight", getState().article.weight);
-        inputData.append("category", getState().article.category);
-        inputData.append("description", getState().article.description);
-        inputData.append("createdAt", getState().article.created_at);
-        inputData.append("updatedAt", getState().article.updated_at);
+        inputData.append("productName", getState().product.productName);
+        inputData.append("price", getState().product.price);
+        inputData.append("image", getState().product.image);
+        inputData.append("stock", getState().product.stock);
+        inputData.append("weight", getState().product.weight);
+        inputData.append("category", getState().product.category);
+        inputData.append("description", getState().product.description);
+        inputData.append("createdAt", getState().product.created_at);
+        inputData.append("updatedAt", getState().product.updated_at);
 
         axios({
             method: "POST",
-            url: url + "article",
+            url: url + "product",
             data: inputData,
             headers: {
                 "Content-Type": "multipart/form-data",
