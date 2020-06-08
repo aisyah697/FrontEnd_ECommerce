@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import ListProduct from "../components/ListProduct";
@@ -18,6 +19,11 @@ class AllProducts extends Component {
         <Navigation {...this.props} />
         <h1 className="text-center mt-3">All Products</h1>
         <hr className="divider" />
+        <Link to="/add-product">
+          <button className="add-products ml-5 mb-5">
+            <i class="fas fa-plus-square"></i> Add products
+          </button>
+        </Link>
         <div className="container">
           <div className="row list-product-home">
             {productList.map((value) => (
