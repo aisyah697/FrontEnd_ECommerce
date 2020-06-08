@@ -33,7 +33,6 @@ class Home extends Component {
           <div className="banner-content">
             <div className="text-on-banner text-center mt-2">
               <h1>THE BEST QUALITY ESSENTIAL OILS</h1>
-              <h1>TEST</h1>
               <hr className="hr-banner" />
               <h2>We Bring Aromas to The Next Level</h2>
             </div>
