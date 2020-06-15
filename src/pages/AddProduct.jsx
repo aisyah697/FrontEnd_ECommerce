@@ -39,7 +39,7 @@ class AddProduct extends Component {
                   type="text"
                   class="form-control"
                   id="exampleInputEmail1"
-                  name="productName"
+                  name="product_name"
                   aria-describedby="emailHelp"
                   onChange={(e) => this.props.changeInputProduct(e)}
                 />
