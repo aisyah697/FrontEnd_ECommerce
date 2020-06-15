@@ -29,6 +29,12 @@ header {
     margin-left: 330px;
 }
 
+@media only screen and (max-width: 768px) {
+    .navbar-top-menu {
+        margin-left: 20px;
+    }
+}
+
 .navbar {
     justify-content: space-between;
     background-color: white !important;
@@ -122,6 +128,12 @@ hr.divider {
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    .text-on-banner {
+        display: none !important;
+    }
 }
 
 .banner-content {
@@ -371,6 +383,18 @@ th {
 .delete-cart:hover {
     background-color: black;
     border-color: transparent;
+}
+
+.btn-checkout {
+    display: flex;
+    justify-content: center !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .btn-checkout {
+        display: flex;
+        justify-content: left !important;
+    }
 }
 
 

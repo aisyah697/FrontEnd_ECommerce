@@ -19,13 +19,15 @@ class ShoppingCart extends Component {
     const is_login = localStorage.getItem("token");
     const cart = this.props.dataCart.cart;
 
+    console.warn("cek delete cart", this);
+
     return (
       <div>
         {is_login ? (
           <div>
             <Navigation {...this.props} />
             <div className="container table-cart-container">
-              <table class="table table-hover table-cart">
+              <table className="table table-hover table-cart">
                 <thead>
                   <tr>
                     <th scope="col">No.</th>
@@ -55,9 +57,11 @@ class ShoppingCart extends Component {
                 ))}
               </table>
               <br />
-              <Link to="/checkout">
-                <button className="btn-checkout">CHECK OUT</button>
-              </Link>
+              <div className="btn-checkout">
+                <Link to="/checkout">
+                  <button>CHECK OUT</button>
+                </Link>
+              </div>
             </div>
             <Footer />
           </div>

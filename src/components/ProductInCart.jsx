@@ -3,8 +3,6 @@ import React from "react";
 var currencyFormatter = require("currency-formatter");
 
 const ProductInCart = (props) => {
-  console.log("cek produk dalam cart", props);
-
   return (
     <tr>
       <th scope="row">{props.index}</th>

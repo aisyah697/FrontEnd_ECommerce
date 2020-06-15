@@ -4,8 +4,10 @@ import Footer from "../components/Footer";
 import { doSignOut } from "../store/actions/actionUser";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { allProducts } from "../store/actions/actionProduct";
+import { allProducts, deleteProduct } from "../store/actions/actionProduct";
 import { postCart, updateInputQty } from "../store/actions/actionCart";
+
+var currencyFormatter = require("currency-formatter");
 
 class ProductDetail extends Component {
   componentDidMount() {
@@ -19,6 +21,8 @@ class ProductDetail extends Component {
     const productDetail = this.props.dataProduct.productList.filter(
       (item) => item.product_name === productName
     );
+
+    console.warn("cek delete product", productDetail);
 
     return (
       <div>
@@ -37,7 +41,8 @@ class ProductDetail extends Component {
             </div>
             <div className="col-sm-6">
               <h3>{item.product_name}</h3>
-              <h4>IDR {item.price}</h4>
+              <h4>{currencyFormatter.format(item.price, { code: "IDR" })}</h4>
+
               <span>
                 <i className="fas fa-star"></i>
               </span>
@@ -109,6 +114,12 @@ class ProductDetail extends Component {
                   <span>Expiry Date : April 2021</span>
                 </strong>
               </div>
+              <Link
+                to="/all-products"
+                onClick={() => this.props.deleteProduct(productDetail.id)}
+              >
+                <button className="delete-cart mt-2">DELETE PRODUCT</button>
+              </Link>
             </div>
           </div>
         ))}
@@ -203,6 +214,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   doSignOut,
   allProducts,
+  deleteProduct,
   updateInputQty,
   postCart,
 };

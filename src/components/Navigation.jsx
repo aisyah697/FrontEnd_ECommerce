@@ -6,10 +6,7 @@ const Navigation = (props) => {
 
   const postSignOut = async () => {
     await props.doSignOut();
-    if (!is_login) {
-      console.log("cek cek", this);
-      props.history.replace("/login");
-    }
+    await props.history.replace("/login");
   };
   console.log("cek header", props);
   return (
